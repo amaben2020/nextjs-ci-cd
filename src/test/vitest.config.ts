@@ -12,13 +12,6 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./src/tests/setup-test-environment.ts'],
     include: ['./src/**/*.{spec,test}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    watch: {
-      ignored: [
-        String.raw`.*\\/node_modules\\/.*`,
-        String.raw`.*\\/build\\/.*`,
-        String.raw`.*\\/postgres-data\\/.*`,
-      ],
-    },
     coverage: {
       reporter: ['text', 'json', 'html'],
     },

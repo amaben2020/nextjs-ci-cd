@@ -16,7 +16,7 @@
     "format": "prettier --write .",
     "lint:fix": "next lint --fix",
     "prepare": "husky install",
-    "test": "vitest --reporter=verbose",
+    "test": "vitest --run --reporter=verbose",
     "test:e2e": "npx playwright test",
     "test:e2e:ui": "npx playwright test --ui"
   },
