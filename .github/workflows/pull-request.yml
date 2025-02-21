@@ -52,3 +52,37 @@ jobs:
           fetch-depth: 0
       - name: ⚙️ commitlint
         uses: wagoid/commitlint-github-action@v4
+
+  vitest:
+    name: ⚡ Vitest
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 🛠 Setup Database
+        run: npm run prisma:wipe
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/testdb
+
+      - name: ⚡ Run vitest
+        run: npm run test -- --coverage
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/testdb
