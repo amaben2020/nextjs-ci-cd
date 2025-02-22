@@ -10,8 +10,8 @@ export default function Home() {
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Voluptate necessitatibus animi neque excepturi, illo sequi unde et
-              ea sapiente quam sint cupiditate delectus voluptatum debitis
-              labore quaerat, obcaecati quasi natus!
+              ea sapiente quam sint delectus voluptatum debitis labore quaerat,
+              obcaecati quasi natus!
             </p>
           </Card>{' '}
           <Card className="border p-10 text-black">
