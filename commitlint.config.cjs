@@ -15,8 +15,8 @@ const config = {
       'always',
       ['feat', 'fix', 'chore', 'docs', 'style', 'refactor', 'test', 'revert'],
     ],
-    'subject-empty': [2, 'never'],
-    'type-empty': [2, 'never'],
+    // 'subject-empty': [2, 'never'],
+    // 'type-empty': [2, 'never'],
   },
 };
 
