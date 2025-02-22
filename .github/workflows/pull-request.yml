@@ -40,18 +40,12 @@ jobs:
         run: npm run type-check --if-present
 
   commitlint:
-    name: ⚙️ commitlint
     runs-on: ubuntu-latest
-    if: github.actor != 'dependabot[bot]'
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: ⚙️ commitlint
-        uses: wagoid/commitlint-github-action@v4
+      - uses: wagoid/commitlint-github-action@v4
 
   vitest:
     name: ⚡ Vitest
